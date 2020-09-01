@@ -40,7 +40,7 @@ export default class HomesController {
             // @ts-ignore
             description: form.description.value,
             // @ts-ignore
-            imgUrl: form.img.value
+            imgUrl: form.imgUrl.value
         }
         try {
             homesService.createHome(rawHome)
@@ -58,6 +58,7 @@ export default class HomesController {
     }
 
     bid(id) {
+        console.log(id)
         try {
             homesService.bid(id);
         } catch (error) {

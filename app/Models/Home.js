@@ -1,6 +1,6 @@
 export default class Home {
-    constructor({ id, bedrooms, levels, bathrooms, year, price, imgUrl, description }) {
-        this.id = id
+    constructor({ _id, bedrooms, levels, bathrooms, year, price, imgUrl, description }) {
+        this.id = _id
         this.bedrooms = bedrooms
         this.bathrooms = bathrooms
         this.levels = levels

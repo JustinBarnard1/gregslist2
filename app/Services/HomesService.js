@@ -18,6 +18,7 @@ class HomesService {
 
     async bid(id) {
         let home = ProxyState.homes.find(h => h.id === id)
+        console.log(home)
         if (!home) {
             throw new Error("Home Not Found")
         }
