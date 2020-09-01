@@ -7,7 +7,6 @@ class HomesService {
 
     async getHomes() {
         let res = await api.get('houses')
-        console.log(res.data.data)
         ProxyState.homes = res.data.data.map(h => new Home(h))
     }
 

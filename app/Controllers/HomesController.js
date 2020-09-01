@@ -58,7 +58,6 @@ export default class HomesController {
     }
 
     bid(id) {
-        console.log(id)
         try {
             homesService.bid(id);
         } catch (error) {
