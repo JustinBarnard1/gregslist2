@@ -6,7 +6,7 @@ export default class Home {
         this.levels = levels
         this.year = year
         this.price = price
-        this.imgUrl = imgUrl
+        this.imgUrl = imgUrl || "//placehold.it/200x200"
         this.description = description || "no description"
     }
 
