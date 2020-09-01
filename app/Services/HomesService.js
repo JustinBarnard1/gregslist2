@@ -6,12 +6,13 @@ import { api } from "./AxiosService.js";
 class HomesService {
 
     async getHomes() {
-        let res = await api.get('homes')
+        let res = await api.get('houses')
+        console.log(res.data.data)
         ProxyState.homes = res.data.data.map(h => new Home(h))
     }
 
-    removeHome(id) {
-        await api.delete(`homes/${id}`)
+    async removeHome(id) {
+        await api.delete(`houses/${id}`)
         ProxyState.homes = ProxyState.homes.filter(h => h.id !== id)
     }
 
@@ -21,12 +22,12 @@ class HomesService {
             throw new Error("Home Not Found")
         }
         home.price += 1000;
-        let res = await api.put(`homes/${id}`, { price: home.price })
+        let res = await api.put(`houses/${id}`, { price: home.price })
         ProxyState.homes = ProxyState.homes
     }
 
     async createHome(rawHome) {
-        let res = await api.post('homes', rawHome)
+        let res = await api.post('houses', rawHome)
         let home = new Home(res.data.data)
         ProxyState.homes = [...ProxyState.homes, home]
     }

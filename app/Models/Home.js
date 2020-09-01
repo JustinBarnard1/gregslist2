@@ -1,12 +1,12 @@
 export default class Home {
-    constructor({ id, bedroom, levels, bathroom, year, price, img, description }) {
+    constructor({ id, bedrooms, levels, bathrooms, year, price, imgUrl, description }) {
         this.id = id
-        this.bedroom = bedroom
-        this.bathroom = bathroom
+        this.bedrooms = bedrooms
+        this.bathrooms = bathrooms
         this.levels = levels
         this.year = year
         this.price = price
-        this.imgUrl = img
+        this.imgUrl = imgUrl
         this.description = description || "no description"
     }
 
@@ -16,7 +16,7 @@ export default class Home {
     <div class="card">
         <img class="card-img-top" src="${this.imgUrl}" alt="">
             <div class="card-body">
-                <h4 class="card-title">${this.year} - ${this.bedroom}, ${this.bathroom}</h4>
+                <h4 class="card-title">${this.year} - ${this.bedrooms}, ${this.bathrooms}</h4>
                 <p class="card-text">${this.description}</p>
                 <div class="d-flex justify-content-between">
                     <button class="btn btn-outline-danger"

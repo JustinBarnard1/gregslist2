@@ -1,5 +1,6 @@
 import homesService from "../Services/HomesService.js";
 import { ProxyState } from "../AppState.js";
+
 // private
 function _drawHomes() {
     let homes = ProxyState.homes
@@ -18,7 +19,7 @@ export default class HomesController {
 
     getHomes() {
         try {
-            homesService.getCars();
+            homesService.getHomes();
         } catch (error) {
             console.error(error)
         }
