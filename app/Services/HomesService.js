@@ -14,17 +14,22 @@ class HomesService {
         await api.delete(`homes/${id}`)
         ProxyState.homes = ProxyState.homes.filter(h => h.id !== id)
     }
-}
 
-bid(id) {
-    let home = STORE.State.homes.find(h => h.id === id)
-    home.price += 1000;
-}
+    async bid(id) {
+        let home = ProxyState.homes.find(h => h.id === id)
+        if (!home) {
+            throw new Error("Home Not Found")
+        }
+        home.price += 1000;
+        let res = await api.put(`homes/${id}`, { price: home.price })
+        ProxyState.homes = ProxyState.homes
+    }
 
-createHome(rawHome) {
-    let home = new Home(rawHome)
-    STORE.State.homes.push(home)
-}
+    async createHome(rawHome) {
+        let res = await api.post('homes', rawHome)
+        let home = new Home(res.data.data)
+        ProxyState.homes = [...ProxyState.homes, home]
+    }
 }
 
 const SERVICE = new HomesService();
