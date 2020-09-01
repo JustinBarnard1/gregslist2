@@ -14,10 +14,10 @@ function _drawCars() {
 export default class CarsController {
   constructor() {
     // NOTE Add all Listeners   
-    ProxyState.on('cars', _drawCars)
 
-    // NOTE Get all appropriate data
+    ProxyState.on('cars', _drawCars)
     this.getCars();
+    // NOTE Get all appropriate data
   }
 
   // NOTE this allows to fetch manually if needed
@@ -28,7 +28,6 @@ export default class CarsController {
       console.error(error)
     }
   }
-
 
   createCar() {
     event.preventDefault();
