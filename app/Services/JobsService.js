@@ -17,6 +17,7 @@ class JobsService {
     async createJob(rawJob) {
         let res = await api.post('jobs', rawJob)
         let job = new Job(res.data.data)
+        console.log(job)
         ProxyState.jobs = [...ProxyState.jobs, job]
     }
 }

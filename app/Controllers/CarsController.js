@@ -52,6 +52,7 @@ export default class CarsController {
     } catch (error) {
       console.error(error)
     }
+    form.reset()
   }
 
   removeCar(id) {

@@ -38,6 +38,7 @@ export default class JobsController {
         } catch (error) {
             console.error(error)
         }
+        form.reset()
     }
 
     removeJob(id) {

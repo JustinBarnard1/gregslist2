@@ -47,6 +47,7 @@ export default class HomesController {
         } catch (error) {
             console.error(error)
         }
+        form.reset()
     }
 
     removeHome(id) {
